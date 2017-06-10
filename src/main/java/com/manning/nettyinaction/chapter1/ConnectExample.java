@@ -16,10 +16,11 @@ import java.nio.charset.Charset;
  */
 public class ConnectExample {
 
+
     public static void connect(Channel channel) {
         // Does not block
         ChannelFuture future = channel.connect(
-                new InetSocketAddress("192.168.0.1", 25));
+                new InetSocketAddress("127.0.0.1", 25));
         future.addListener(new ChannelFutureListener() {
         @Override
         public void operationComplete(ChannelFuture future) {
@@ -36,4 +37,5 @@ public class ConnectExample {
         });
 
     }
+
 }
